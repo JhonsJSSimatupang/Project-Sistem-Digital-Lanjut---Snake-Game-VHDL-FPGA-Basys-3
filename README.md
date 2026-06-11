@@ -154,18 +154,20 @@ Menggunakan pseudo-random sederhana: `food_counter + score` di-modulo dengan uku
 
 **6. VGA Renderer**
 Proses kombinasional yang menentukan warna setiap pixel dengan urutan prioritas:
-```
-Teks (SCORE/PRESS ENTER/GAME OVER)
-  ↓ kalau tidak ada teks
-Mata ular (hitam, di kepala)
-  ↓
-Badan ular (hijau)
-  ↓
-Makanan (merah)
-  ↓
-Background gurun (pola dua warna kuning)
-```
+```mermaid
+flowchart TD
+    A[Render Text<br/>SCORE / PRESS ENTER / GAME OVER]
 
+    A -->|Jika bukan area teks| B[Render Snake Eyes]
+
+    B -->|Jika bukan mata ular| C[Render Snake Body]
+
+    C -->|Jika bukan badan ular| D[Render Food]
+
+    D -->|Jika bukan makanan| E[Render Desert Background]
+
+    E --> F[Output RGB Pixel]
+```
 **7. Character ROM**
 Array bitmap 8×16 pixel hardcoded untuk huruf A-Z dan angka 0-9, digunakan untuk menampilkan teks di layar tanpa memerlukan font eksternal.
 
