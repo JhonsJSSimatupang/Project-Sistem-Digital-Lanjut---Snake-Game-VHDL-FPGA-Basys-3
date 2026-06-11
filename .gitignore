@@ -1,0 +1,22 @@
+# Vivado generated files - jangan di-push ke GitHub
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.jou
+*.log
+*.pb
+*.str
+*.wdf
+*.wpc
+*.dcp
+*.rpt
+*.rpx
+
+# Bitstream tetap disimpan
+!bitstream/*.bit
+
+# OS files
+.DS_Store
+Thumbs.db
