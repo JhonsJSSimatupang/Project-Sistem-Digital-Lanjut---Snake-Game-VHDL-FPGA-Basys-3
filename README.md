@@ -106,26 +106,23 @@ Download: [https://www.xilinx.com/support/download.html](https://www.xilinx.com/
 
 ### Arsitektur Keseluruhan
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                     FPGA Basys 3                        │
-│                                                         │
-│  Keyboard PS/2 ──▶ [ ps2_keyboard.vhd ]                │
-│                           │ scan_code                   │
-│                           ▼                             │
-│                 [ snake_game_top.vhd ]                  │
-│                 ┌─────────────────────┐                 │
-│                 │  Input Handler      │                 │
-│                 │  Game Logic (FSM)   │──▶ VGA RGB ──▶ Monitor
-│                 │  VGA Renderer       │──▶ Hsync/Vsync  │
-│                 │  Score Display      │                 │
-│                 │  Character ROM      │                 │
-│                 └─────────────────────┘                 │
-│                                                         │
-│  Clock 100MHz ──▶ Divider ──▶ 25MHz (pixel clock VGA)  │
-└─────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart LR
+    K[PS/2 Keyboard] --> P[ps2_keyboard.vhd]
+    P -->|scan_code| S[snake_game_top.vhd]
 
+    C[100 MHz Clock] --> D[Clock Divider]
+    D --> V[25 MHz VGA Pixel Clock]
+    V --> S
+
+    S --> I[Input Handler]
+    S --> G[Game Logic FSM]
+    S --> R[VGA Renderer]
+    S --> SC[Score Display]
+    S --> CR[Character ROM]
+
+    R -->|RGB + HSync + VSync| M[Monitor]
+```
 ### Modul `snake_game_top.vhd` — Kode Utama
 
 File utama ini mengandung semua logika permainan sekaligus renderer VGA. Terdiri dari beberapa bagian:
