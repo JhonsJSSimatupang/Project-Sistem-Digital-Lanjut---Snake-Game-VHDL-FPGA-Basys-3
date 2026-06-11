@@ -1,7 +1,7 @@
-# 🐍 Snake Game — VHDL FPGA Basys 3
+#  Snake Game — VHDL FPGA Basys 3
 
 **Project Akhir Mata Kuliah Sistem Digital Lanjut**
-Fakultas Ilmu Komputer, Universitas Brawijaya — 2025
+
 
 > Implementasi klasik **Snake Game** menggunakan bahasa **VHDL** yang berjalan langsung di atas hardware **FPGA Xilinx Basys 3**, dengan output visual ke monitor via **VGA 640×480@60Hz** dan kontrol menggunakan **keyboard PS/2**.
 
@@ -315,13 +315,10 @@ Detail lengkap lihat di `constraints/Basys3_Master.xdc`.
 
 | Nama | NIM |
 |---|---|
-| Dennis William Situmorang | 245150307111022 |
+| Dennis William Situmorang | 245150307111022 | 
 | Christo Alfredo Sitorus | 245150300111022 |
 | Jhons Janner Samuel S. | 245150301111009 |
 | Samuel Fransjemima | 245150300111038 |
 | Made Nugraha Pradnyana | 245150307111012 |
 | Anastasya Sheva | 245150301111034 |
 
-**Dosen Pengampu:** Eko Setiawan, S.T., M.T., M.Eng., Ph.D.
-**Mata Kuliah:** Sistem Digital Lanjut
-**Universitas Brawijaya — Fakultas Ilmu Komputer, 2025**
